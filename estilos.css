@@ -1,0 +1,266 @@
+/* Variables de color */
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #e74c3c;
+    --color-fondo: #f9f9f9;
+    --color-texto: #333;
+    --color-borde: #e0e0e0;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Cabecera */
+.cabecera {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cabecera h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.cabecera h1 span {
+    color: var(--color-secundario);
+}
+
+.cabecera p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    gap: 25px;
+    padding: 20px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+}
+
+.carrusel-contenedor::-webkit-scrollbar {
+    display: none;
+}
+
+/* Productos */
+.producto {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+    position: relative;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.producto.destacado {
+    border: 2px solid var(--color-secundario);
+}
+
+.producto-imagen {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicion);
+}
+
+.producto:hover .producto-imagen img {
+    transform: scale(1.05);
+}
+
+.producto-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-secundario);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.producto-badge.oferta {
+    background: #27ae60;
+}
+
+.producto-info {
+    padding: 20px;
+}
+
+.producto-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+
+.producto-desc {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.producto-precio {
+    margin: 1rem 0;
+}
+
+.precio-actual {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+}
+
+.precio-anterior {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.btn-carrito {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.btn-carrito:hover {
+    background: var(--color-secundario);
+}
+
+/* Controles del carrusel */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primario);
+    transition: var(--transicion);
+}
+
+.carrusel-btn:hover {
+    background: var(--color-secundario);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#btn-izquierda {
+    left: 0;
+}
+
+#btn-derecha {
+    right: 0;
+}
+
+/* Indicadores */
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.indicador.activo {
+    background: var(--color-secundario);
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrusel {
+        padding: 0 30px;
+    }
+
+    .producto {
+        flex: 0 0 240px;
+    }
+
+    .cabecera h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrusel {
+        padding: 0 15px;
+    }
+
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .producto {
+        flex: 0 0 220px;
+    }
+}

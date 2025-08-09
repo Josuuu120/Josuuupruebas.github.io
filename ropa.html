@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Moda Elegante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <header class="cabecera">
+            <h1>Colección Exclusiva <span>2025</span></h1>
+            <p>Descubre nuestras prendas premium</p>
+        </header>
+
+        <div class="carrusel">
+            <button class="carrusel-btn" id="btn-izquierda">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="carrusel-contenedor">
+                <!-- Producto 1 -->
+                <div class="producto">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&h=300"
+                            alt="Camiseta">
+                        <div class="producto-badge">Nuevo</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Camiseta</h3>
+                        <p class="producto-desc">Algodón de Ecuador</p>
+                        <div class="producto-precio">
+                            <span class="precio-actual">$29.99</span>
+                            <span class="precio-anterior">$39.99</span>
+                        </div>
+                        <button class="btn-carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="producto">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&h=300"
+                            alt="Jeans">
+                        <div class="producto-badge oferta">-25%</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Jeans</h3>
+                        <p class="producto-desc">Corte moderno y cómodo</p>
+                        <div class="producto-precio">
+                            <span class="precio-actual">$59.99</span>
+                            <span class="precio-anterior">$79.99</span>
+                        </div>
+                        <button class="btn-carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="producto destacado">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&h=300"
+                            alt="Chaqueta">
+                        <div class="producto-badge">Best Seller</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Chaqueta de Cuero</h3>
+                        <p class="producto-desc">Elegante y duradera</p>
+                        <div class="producto-precio">
+                            <span class="precio-actual">$129.99</span>
+                            <span class="precio-anterior">$149.99</span>
+                        </div>
+                        <button class="btn-carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="producto">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&h=300"
+                            alt="Vestido">
+                    </div>
+                    <div class="producto-info">
+                        <h3>Vestido Elegante</h3>
+                        <p class="producto-desc">Para ocasiones especiales</p>
+                        <div class="producto-precio">
+                            <span class="precio-actual">$89.99</span>
+                        </div>
+                        <button class="btn-carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="producto">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&h=300"
+                            alt="Zapatos">
+                        <div class="producto-badge oferta">-15%</div>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Zapatos Urbanos</h3>
+                        <p class="producto-desc">Comodidad y estilo</p>
+                        <div class="producto-precio">
+                            <span class="precio-actual">$79.99</span>
+                            <span class="precio-anterior">$94.99</span>
+                        </div>
+                        <button class="btn-carrito">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carrusel-btn" id="btn-derecha">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="indicadores">
+            <span class="indicador activo"></span>
+            <span class="indicador"></span>
+            <span class="indicador"></span>
+            <span class="indicador"></span>
+            <span class="indicador"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
